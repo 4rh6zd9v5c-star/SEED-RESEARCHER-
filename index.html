@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Balance Checker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Wallet Balance Checker</h1>
+    <textarea id="seedInput" rows="10" cols="50" placeholder="Paste up to 100 wallet BIP-39 seeds here"></textarea>
+    <br />
+    <button onclick="checkWallets()">Scan Wallets</button>
+
+    <div id="result">
+        <h2>Results</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Address</th>
+                    <th>Balance</th>
+                    <th>Last Transaction</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="walletTable"></tbody>
+        </table>
+        <div id="walletDetails" style="display: none;">
+            <h2>Wallet Details</h2>
+            <p><b>Seed:</b> <span id="seed"></span> <button onclick="copyToClipboard('seed')">Copy</button></p>
+            <p><b>Address:</b> <span id="walletAddress"></span> <button onclick="copyToClipboard('walletAddress')">Copy</button></p>
+            <p><b>Balance:</b> <span id="walletBalance"></span></p>
+            <p><b>Transactions:</b> <span id="transactions"></span></p>
+            <button onclick="goBack()">Go Back</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
